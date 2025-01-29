@@ -12,8 +12,8 @@ linter: jetbrains/qodana-jvm:2024.3
 include:
   - name: All
     paths:
-      - Qodana_check2/src
-      - test1/src
+      - Qodana_check2/src/Main.java
+      - test1/src/Main.java
   - name: AssignmentToMethodParameter
   - name: AssignmentToLambdaParameter
   - name: ClassCoupling
