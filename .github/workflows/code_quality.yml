@@ -5,8 +5,8 @@ on:
     branches:
       - main
   push:
-    branches: # Specify your branches here
-      - main # The 'main' branch
+    branches:
+      - main
 
 jobs:
   qodana:
@@ -18,9 +18,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.pull_request.head.sha }}  # to check out the actual pull request commit, not the merge commit
-          fetch-depth: 0  # a full history is required for pull request analysis
+          ref: ${{ github.event.pull_request.head.sha }}  # Check out the actual PR commit, not the merge commit
+          fetch-depth: 0  # A full history is required for PR analysis
+          
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v2024.3
+        with:
+          pr-mode: false
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+
