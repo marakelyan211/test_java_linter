@@ -22,6 +22,6 @@ jobs:
         with:
           pr-mode: false
         env:
-          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_1029134318 }}
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN}}
 
 
